@@ -1,1 +1,26 @@
 
+Q1] what is HQL?==
+
+how to execute HQL querys?===
+
+
+
+
+
+
+
+
+1. Basic HQL Query with Pagination
+
+To implement pagination using Hibernate HQL (Hibernate Query Language), you can use the setFirstResult and setMaxResults methods provided by the Query interface.
+These methods allow you to define the starting position and limit the number of records fetched from the database,
+which is crucial for paginating large datasets.
+
+
+Imagine you’re at a huge library filled with thousands of books. You're interested in reading a long, detailed encyclopedia about your favorite topic,
+but you don’t want to (or can’t) read the whole thing at once because it's massive and overwhelming. 
+Instead, you decide to break it down and read just a few pages at a time.
+
+You go to the librarian, who has a clever system. She knows that each time you come back,
+you’ll want to start where you left off. She hands you 10 pages at a time. Once you finish those, you come back, and she gives you the next 10 pages. 
+This way, you’re not burdened by carrying or reading the entire book at once, and it’s easier to digest the information bit by bit.
