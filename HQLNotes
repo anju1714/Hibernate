@@ -24,3 +24,38 @@ Instead, you decide to break it down and read just a few pages at a time.
 You go to the librarian, who has a clever system. She knows that each time you come back,
 you’ll want to start where you left off. She hands you 10 pages at a time. Once you finish those, you come back, and she gives you the next 10 pages. 
 This way, you’re not burdened by carrying or reading the entire book at once, and it’s easier to digest the information bit by bit.
+
+String hql = "FROM Employee";
+Query query = session.createQuery(hql);
+
+// Set pagination parameters
+query.setFirstResult((pageNumber - 1) * pageSize);  // pageNumber starts from 1
+query.setMaxResults(pageSize);
+
+// Execute the query
+List<Employee> employees = query.list();
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+**====== Dao=====  is a simply design patern its data aceess object 
+In Java applications, especially when following good architectural practices like the DAO pattern and Service layer, the names of classes (like Service and DAO) 
+play an important role in ensuring clarity and readability of the code. Here’s why and how these naming conventions are used:
+
+1. DAO (Data Access Object)
+The DAO layer is responsible for direct interaction with the database. It typically contains methods for CRUD (Create, Read, Update, Delete) operations.
+
+Why Use DAO in Class Names?
+Clarity: When you see a class like CustomerDAO, you immediately know that this class is responsible for handling database operations related to the Customer entity.
+Separation of concerns: It makes it clear that this class is concerned with data access, and doesn't mix business logic with database operations.
+
+** Service ==== 2. Service Layer
+The service layer contains business logic. It typically interacts with one or more DAO classes and handles the higher-level logic of the application.
+
+Why Use Service in Class Names?
+Clarity: When you see a class like BookingService, it is clear that this class contains the business logic related to booking, but does not directly handle database interactions (which would be the responsibility of the DAO classes).
+Separation of concerns: It ensures that the business logic is kept separate from the data access logic, following the single responsibility principle.
+
+
+Q] how we can handel or fire SQL query from HQL?====================
+
+
